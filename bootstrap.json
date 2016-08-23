@@ -1,6 +1,5 @@
 {
     "after-scripts": [
-        "./scripts/keybindings/install.sh",
         "'./scripts/Terminal Launcher/install.sh'",
         "cd ./scripts/swift && ./install",
         "./scripts/vim_setup.sh",
