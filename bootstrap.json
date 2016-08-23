@@ -1,6 +1,5 @@
 {
     "after-scripts": [
-        "./scripts/update_ruby.sh",
         "./scripts/keybindings/install.sh",
         "'./scripts/Terminal Launcher/install.sh'",
         "cd ./scripts/swift && ./install",
