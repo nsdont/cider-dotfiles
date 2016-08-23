@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-for var in "$@"; do
-    osascript -e "tell application \"$var\" to quit"
-done
