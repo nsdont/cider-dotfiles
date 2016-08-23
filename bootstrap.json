@@ -55,7 +55,4 @@
     "symlinks": {
         "git/.*": "~",
         "vim/.*": "~",
-        "zsh/.zsh-functions/*": "~/.zsh-functions/",
-        "zsh/.zshrc": "~"
-    }
 }
