@@ -1,6 +1,5 @@
 {
     "after-scripts": [
-        "./scripts/vim_setup.sh",
         "./scripts/go_setup.sh",
         "brew linkapps"
     ],
