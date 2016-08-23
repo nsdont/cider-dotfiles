@@ -1,6 +1,5 @@
 {
     "after-scripts": [
-        "./scripts/go_setup.sh",
         "brew linkapps"
     ],
     "casks": [
