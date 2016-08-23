@@ -54,7 +54,6 @@
     "icons": {},
     "symlinks": {
         "git/.*": "~",
-        "sh/.*": "~",
         "vim/.*": "~",
         "xvim/.*": "~",
         "zsh/.zsh-functions/*": "~/.zsh-functions/",
