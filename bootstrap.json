@@ -51,10 +51,7 @@
         "yuicompressor",
         "zopfli"
     ],
-    "icons": {
-        "Firefox": "https://www.dropbox.com/s/pihdkmpu7exe944/Firefox.icns?dl=0",
-        "Slack": "https://www.dropbox.com/s/g9un4zy0jn49uym/Slack.icns?dl=0"
-    },
+    "icons": {},
     "symlinks": {
         "bash/.*": "~",
         "bin/*": "~/bin/",
