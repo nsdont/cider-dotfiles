@@ -7,6 +7,10 @@
         "./scripts/nvm/install.sh"
     ],
     "casks": [
+        "font-hack",
+        "font-mononoki",
+        "font-roboto",
+        "font-source-code-pro",
         "google-chrome",
         "spectacle",
         "sublime-text",
