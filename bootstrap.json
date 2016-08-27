@@ -2,6 +2,9 @@
     "after-scripts": [
         "brew linkapps"
     ],
+    "before-scripts": [
+        "./scripts/oh-my-zsh/install.sh",
+    ],
     "casks": [
         "dropbox",
         "emacs",
