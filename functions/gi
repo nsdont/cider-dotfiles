@@ -1,0 +1,8 @@
+# https://www.gitignore.io/
+# Create useful .gitignore files for your project
+#
+# Usage:
+#
+# $ gi java,python >> .gitignore
+#
+function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
