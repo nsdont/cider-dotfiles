@@ -1,38 +1,42 @@
+[hub]
+  protocol = https
 [user]
-	name = Michael Sanders
-	email = michael@msanders.com
-[core]
-    editor = vim
-	whitespace = trailing-space,space-before-tab
-	excludesfile = ~/.gitignore
-	pull = pull --ff-only
-[alias]
-    up = "!git remote update -p; git merge --ff-only @{u}"
-[alias]
-    reup = !/usr/local/bin/git-reup
-[mergetool]
-	keepBackup = false
-	prompt = false
-[push]
-	default = tracking
-[filter "media"]
-	required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
-[merge]
-	tool = chdiff
-[diff]
-	tool = chdiff
-[difftool]
-	prompt = false
-[difftool "chdiff"]
-    cmd = chdiff "$LOCAL" "$REMOTE"
-	trustExitCode = true
-[mergetool "chdiff"]
-    cmd = chdiff "$LOCAL" "$REMOTE"
-[filter "lfs"]
-	clean = git lfs clean %f
-	smudge = git lfs smudge %f
-	required = true
+  name = Amo Wu
+  email = amo260@gmail.com
+  signingkey = E77D0CB6
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  log = auto
+  ui = true
+[core]
+  excludesfile = ~/.gitignore
+  editor = vim
+[help]
+  autocorrect = 1
+[push]
+  default = simple
+[diff]
+  tool = sourcetree
+[difftool]
+  prompt = false
+[difftool "sourcetree"]
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  trustExitCode = false
+  path =
+[merge]
+  tool = sourcetree
+[mergetool]
+  keepBackup = false
+[mergetool "sourcetree"]
+  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
+[filter "lfs"]
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
+[commit]
+  gpgsign = true
