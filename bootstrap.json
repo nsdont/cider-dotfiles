@@ -49,6 +49,7 @@
         "rbenv --HEAD",
         "tig",
         "tmux",
+        "heroku",
         "pyenv",
         "terraform",
         "wget",
