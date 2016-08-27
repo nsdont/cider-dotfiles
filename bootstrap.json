@@ -41,6 +41,7 @@
         "go",
         "grc",
         "heroku",
+        "mackup",
         "mongodb",
         "pyenv",
         "ssh-copy-id",
@@ -54,6 +55,7 @@
     "icons": {},
     "symlinks": {
         "git/.*": "~",
+        "mackup/.*": "~",
         "vim/.*": "~",
         "zsh/.*": "~"
     },
