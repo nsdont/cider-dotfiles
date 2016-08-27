@@ -4,6 +4,7 @@
     ],
     "before-scripts": [
         "./scripts/oh-my-zsh/install.sh",
+        "./scripts/nvm/install.sh"
     ],
     "casks": [
         "dropbox",
