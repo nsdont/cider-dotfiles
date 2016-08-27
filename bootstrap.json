@@ -33,11 +33,23 @@
     "formulas": [
         "awscli",
         "bash",
+        "coreutils",
+        "findutils",
+        "ffmpeg",
+        "gnupg",
+        "gnupg2",
         "go",
+        "grc",
         "heroku",
+        "mongodb",
         "pyenv",
+        "ssh-copy-id",
         "terraform",
+        "trash",
+        "tree",
+        "unrar",
         "wget",
+        "youtube-dl"
     ],
     "icons": {},
     "symlinks": {
