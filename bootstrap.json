@@ -33,6 +33,7 @@
         "transmission"
     ],
     "formulas": [
+        "awscli",
         "bash",
         "cowsay",
         "fish",
