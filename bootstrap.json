@@ -49,6 +49,7 @@
         "rbenv --HEAD",
         "tig",
         "tmux",
+        "pyenv",
         "wget",
         "xctool",
         "youtube-dl",
