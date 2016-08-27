@@ -25,4 +25,11 @@
         "git/.*": "~",
         "vim/.*": "~",
         "zsh/.*": "~"
+    },
+    "taps": [
+        "caskroom/cask",
+        "caskroom/fonts",
+        "caskroom/versions",
+        "homebrew/bundle"
+    ]
 }
