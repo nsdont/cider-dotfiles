@@ -7,13 +7,28 @@
         "./scripts/nvm/install.sh"
     ],
     "casks": [
+        "alfred",
         "font-hack",
         "font-mononoki",
         "font-roboto",
         "font-source-code-pro",
         "google-chrome",
+        "istat-menus",
+        "iterm2",
+        "keka",
+        "neteasemusic",
+        "postman",
+        "qlcolorcode",
+        "qlmarkdown",
+        "recordit",
+        "robomongo",
+        "sketch",
+        "sketch-toolbox",
+        "slack",
+        "sourcetree",
         "spectacle",
         "sublime-text",
+        "vlc"
     ],
     "formulas": [
         "awscli",
