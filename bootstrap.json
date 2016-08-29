@@ -42,7 +42,7 @@
         "grc",
         "heroku",
         "mackup",
-        "mongodb",
+        "mongodb26",
         "pyenv",
         "ssh-copy-id",
         "terraform",
@@ -63,6 +63,7 @@
         "caskroom/cask",
         "caskroom/fonts",
         "caskroom/versions",
-        "homebrew/bundle"
+        "homebrew/bundle",
+        "homebrew/versions"
     ]
 }
