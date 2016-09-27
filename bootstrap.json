@@ -8,6 +8,7 @@
     ],
     "casks": [
         "alfred",
+        "firefox",
         "font-hack",
         "font-mononoki",
         "font-roboto",
