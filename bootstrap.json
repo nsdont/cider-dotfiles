@@ -9,6 +9,7 @@
     "casks": [
         "alfred",
         "charles",
+        "docker",
         "firefox",
         "font-hack",
         "font-mononoki",
