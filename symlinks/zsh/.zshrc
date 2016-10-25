@@ -49,7 +49,7 @@ ZSH_THEME="Soliah"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting z zsh-autosuggestions zsh-wakatime)
+plugins=(git zsh-syntax-highlighting z zsh-autosuggestions zsh-wakatime docker)
 
 # User configuration
 
