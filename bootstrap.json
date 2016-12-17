@@ -8,6 +8,7 @@
     ],
     "casks": [
         "alfred",
+        "atom",
         "charles",
         "docker",
         "firefox",
