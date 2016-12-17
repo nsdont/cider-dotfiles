@@ -57,6 +57,7 @@
         "heroku",
         "mackup",
         "mongodb26",
+        "opencc",
         "pyenv",
         "ssh-copy-id",
         "terraform",
