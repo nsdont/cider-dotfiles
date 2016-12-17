@@ -40,7 +40,8 @@
         "spectacle",
         "steam",
         "sublime-text",
-        "vlc"
+        "vlc",
+        "writefull"
     ],
     "formulas": [
         "awscli",
