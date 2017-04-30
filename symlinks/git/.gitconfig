@@ -43,3 +43,4 @@
 [alias]
   prune = fetch --prune
   undo = reset --soft HEAD^
+  stash-all = stash save --include-untracked
