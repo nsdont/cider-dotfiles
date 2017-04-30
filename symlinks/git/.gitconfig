@@ -44,3 +44,4 @@
   prune = fetch --prune
   undo = reset --soft HEAD^
   stash-all = stash save --include-untracked
+  standup = log --pretty=format:'%Cred%h%Creset %s, %Cgreen(%ar), %C(bold blue)%an%Creset' --first-parent --since=1.days upstream/develop
