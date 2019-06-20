@@ -1,2 +1,4 @@
-export VISUAL='subl -w'
-export EDITOR='subl -w'
+export EDITOR=/usr/local/bin/vim
+
+# HISTORY
+export HIST_STAMPS="yyyy-mm-dd"

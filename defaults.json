@@ -1,69 +1,69 @@
 {
-    "NSGlobalDomain": {
-        "AppleInterfaceStyle": "Dark",
-        "AppleKeyboardUIMode": 3,
-        "ApplePressAndHoldEnabled": false,
-        "AppleShowAllExtensions": true,
-        "com.apple.mouse.scaling": 3,
-        "com.apple.mouse.tapBehavior": 1,
-        "com.apple.springing.delay": 0,
-        "com.apple.springing.enabled": true,
-        "com.apple.trackpad.scaling": 3,
-        "com.apple.trackpad.threeFingerDragGesture": true,
-        "KeyRepeat": 0,
-        "NSNavPanelExpandedStateForSaveMode": true,
-        "NSNavPanelExpandedStateForSaveMode2": true,
-        "NSWindowResizeTime": 0.001
-    },
-    "com.apple.AppleMultitouchTrackpad": {
-        "TrackpadThreeFingerVertSwipeGesture": 0
-    },
-    "com.apple.dashboard": {
-        "mcx-disabled": true
-    },
-    "com.apple.desktopservices": {
-        "DSDontWriteNetworkStores": true
-    },
-    "com.apple.dock": {
-        "autohide": true,
-        "autohide-delay": 0,
-        "autohide-time-modifier": 0,
-        "dashboard-in-overlay": true,
-        "enable-spring-load-actions-on-all-items": true,
-        "expose-animation-duration": 0.1,
-        "expose-group-by-app": false,
-        "launchanim": false,
-        "mineffect": "scale",
-        "minimize-to-application": true,
-        "show-process-indicators": true,
-        "showAppExposeGestureEnabled": 1,
-        "showhidden": true
-    },
-    "com.apple.driver.AppleBluetoothMultitouch.mouse": {
-        "MouseButtonMode": "TwoButton"
-    },
-    "com.apple.driver.AppleBluetoothMultitouch.trackpad": {
-        "Clicking": true,
-        "TrackpadRightClick": true,
-        "TrackpadThreeFingerDrag": true,
-        "TrackpadThreeFingerVertSwipeGesture": 0
-    },
-    "com.apple.finder": {
-        "_FXShowPosixPathInTitle": true,
-        "FXDefaultSearchScope": "SCcf",
-        "FXEnableExtensionChangeWarning": false,
-        "FXPreferredViewStyle": "clmv",
-        "NewWindowTarget": "PfLo",
-        "NewWindowTargetPath": "file://${HOME}/Downloads/",
-        "QLEnableTextSelection": true,
-        "ShowPathbar": true,
-        "ShowStatusBar": true,
-        "WarnOnEmptyTrash": false
-    },
-    "com.apple.LaunchServices": {
-        "LSQuarantine": false
-    },
-    "com.apple.screencapture": {
-        "disable-shadow": true
-    }
+  "NSGlobalDomain": {
+    "AppleInterfaceStyle": "Dark",
+    "AppleKeyboardUIMode": 3,
+    "ApplePressAndHoldEnabled": false,
+    "AppleShowAllExtensions": true,
+    "com.apple.mouse.scaling": 3,
+    "com.apple.mouse.tapBehavior": 1,
+    "com.apple.springing.delay": 0,
+    "com.apple.springing.enabled": true,
+    "com.apple.trackpad.scaling": 3,
+    "com.apple.trackpad.threeFingerDragGesture": true,
+    "KeyRepeat": 0,
+    "NSNavPanelExpandedStateForSaveMode": true,
+    "NSNavPanelExpandedStateForSaveMode2": true,
+    "NSWindowResizeTime": 0.001
+  },
+  "com.apple.AppleMultitouchTrackpad": {
+    "TrackpadThreeFingerVertSwipeGesture": 0
+  },
+  "com.apple.dashboard": {
+    "mcx-disabled": true
+  },
+  "com.apple.desktopservices": {
+    "DSDontWriteNetworkStores": true
+  },
+  "com.apple.dock": {
+    "autohide": true,
+    "autohide-delay": 0,
+    "autohide-time-modifier": 0,
+    "dashboard-in-overlay": true,
+    "enable-spring-load-actions-on-all-items": true,
+    "expose-animation-duration": 0.1,
+    "expose-group-by-app": false,
+    "launchanim": false,
+    "mineffect": "scale",
+    "minimize-to-application": true,
+    "show-process-indicators": true,
+    "showAppExposeGestureEnabled": 1,
+    "showhidden": true
+  },
+  "com.apple.driver.AppleBluetoothMultitouch.mouse": {
+    "MouseButtonMode": "TwoButton"
+  },
+  "com.apple.driver.AppleBluetoothMultitouch.trackpad": {
+    "Clicking": true,
+    "TrackpadRightClick": true,
+    "TrackpadThreeFingerDrag": true,
+    "TrackpadThreeFingerVertSwipeGesture": 0
+  },
+  "com.apple.finder": {
+    "_FXShowPosixPathInTitle": true,
+    "FXDefaultSearchScope": "SCcf",
+    "FXEnableExtensionChangeWarning": false,
+    "FXPreferredViewStyle": "clmv",
+    "NewWindowTarget": "PfLo",
+    "NewWindowTargetPath": "file://${HOME}/Downloads/",
+    "QLEnableTextSelection": true,
+    "ShowPathbar": true,
+    "ShowStatusBar": true,
+    "WarnOnEmptyTrash": false
+  },
+  "com.apple.LaunchServices": {
+    "LSQuarantine": false
+  },
+  "com.apple.screencapture": {
+    "disable-shadow": true
+  }
 }

@@ -23,7 +23,7 @@ $ pip install -U cider
 ## Download dotfiles
 
 ```bash
-$ git clone https://github.com/amowu/cider-dotfiles.git ~/.cider
+$ git clone https://github.com/nsdont/cider-dotfiles.git ~/.cider
 ```
 
 ## Restore dotfiles
@@ -46,3 +46,5 @@ Restore your application settings in Dropbox sync by [mackup](https://github.com
 ```
 $ mackup restore
 ```
+
+## Store dotfiles

@@ -1,39 +1,432 @@
-execute pathogen#infect()
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" 插件安装配置
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Enable syntax highlighting
+" 关闭兼容模式
+set nocompatible
+filetype off
+
+" set the runtime path to include Vundle and initialize
+call plug#begin('~/.vim/plugged')
+
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'wakatime/vim-wakatime'
+Plug 'easymotion/vim-easymotion'
+Plug 'majutsushi/tagbar'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'klen/python-mode'
+Plug 'scrooloose/syntastic'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'dyng/ctrlsf.vim'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'nvie/vim-flake8'
+Plug 'scrooloose/nerdcommenter'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'rust-lang/rust.vim'
+Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'altercation/vim-colors-solarized'
+Plug 'tomasr/molokai'
+Plug 'Valloric/MatchTagAlways'
+Plug 'Valloric/YouCompleteMe', {'do': 'python3 ./install.py --clang-completer --gocode-completer --tern-completer'}
+Plug 'marijnh/tern_for_vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'leafgarland/typescript-vim'
+Plug 'ybian/smartim'
+Plug 'editorconfig/editorconfig-vim'
+
+" Add plugins to &runtimepath
+call plug#end()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" 基础配置
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" 自适应不同语言的智能缩进
+filetype plugin indent on
+" 将制表符扩展为空格
+set expandtab
+set noswapfile
+set colorcolumn=79
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+" 禁止折行
+set nowrap
+"setlocal textwidth=79
+set backspace=2 " make backspace work like most other apps
+" 开启实时搜索功能
+set incsearch
+" 搜索时大小写不敏感
+set ignorecase
+" vim 自身命令行模式智能补全
+set wildmenu
+" 关闭滚动条
+set guioptions=Ace
+" 禁止光标闪烁
+set gcr=a:block-blinkon0
+" 兼容crontab
+au BufEnter /private/tmp/crontab.* setl backupcopy=yes
+" 总是显示状态栏
+set laststatus=2
+" 显示光标当前位置
+set ruler
+" 开启行号显示
+set number
+" 开启相对行号
+set relativenumber
+" 高亮显示当前行/列
+set cursorline
+set cursorcolumn
+" 高亮显示搜索结果
+set hlsearch
+" 基于缩进或语法进行代码折叠
+"set fdm=syntax
+set fdm=indent
+" 启动 vim 时关闭折叠代码
+" set nofoldenable
+" 临时启动 vim 时开启折叠代码
+set foldenable
+"set foldlevelstart=10
+set foldnestmax=10
+nnoremap <space> za
+set foldmethod=indent
+" 在底部显示 命令
+set showcmd
+" 惰性绘制
+set lazyredraw
+
+" Font
+if has("gui_running")
+    set guifont=Monaco:h14
+    set guifont=Source\ Code\ Pro:h14
+endif
+
+" Set utf8 as standard encoding and en_US as the standard language
+set encoding=utf8
+
+" Use Unix as the standard file type
+set ffs=unix,dos,mac
+
+
+" Set to auto read when a file is changed from the outside
+set autoread
+
+" With a map leader it's possible to do extra key combinations
+" like <leader>w saves the current file
+let mapleader = ","
+let g:mapleader = ","
+
+" Fast saving
+nmap <leader>w :w!<cr>
+
+" Fast compile and run
+nmap <leader>gr :!clear;gcc -g % && ./a.out < std_input<cr>
+
+" 与外部共享剪切板
+set clipboard=unnamed
+
+" Theme配置
+syntax enable
 syntax on
+"set background=light
+"let g:solarized_termcolors=256
+"colorscheme solarized
+colorscheme molokai
+let g:molokai_original=1
+let g:rehash256=1
 
-" Enable filetype plugins
-filetype plugin on
-filetype indent on
+if has("gui_running")
+    set guioptions-=T
+    set guioptions-=e
+    set t_Co=256
+    set guitablabel=%M\ %t
+    set background=dark
+endif
 
-" NERDTree
-map <silent> <C-k>b :NERDTreeToggle<CR>
+""""""""""""""""""""""""""""""
+" => 自动执行 & hook
+""""""""""""""""""""""""""""""
 
-let NERDTreeShowBookmarks=1
+" 保存时去除指定文件类型的尾部空格(每行都去除)
+autocmd BufWritePre *.py :%s/\s\+$//e
 
-" Go to previous (last accessed) window.
-autocmd VimEnter * wincmd p
-" Close NERDTree if it is the last open buffer
-autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+""""""""""""""""""""""""""""""
+" => 快捷键
+""""""""""""""""""""""""""""""
 
-" Close all open buffers on entering a window if the only buffer that's left is the NERDTree buffer
-function! s:CloseIfOnlyNerdTreeLeft()
-	if exists("t:NERDTreeBufName")
-		if bufwinnr(t:NERDTreeBufName) != -1
-			if winnr("$") == 1
-				q
-			endif
-		endif
-	endif
-endfunction
+map <F12> :so $MYVIMRC<CR>
+" 取消当前搜索高亮
+map <Leader><CR> :noh<CR>
 
-" syntastic
+"" Yank text to the OS X clipboard
+"noremap <leader>y "*y
+"noremap <leader>yy "*Y
+
+"" Preserve indentation while pasting text from the OS X clipboard
+"noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" 插件配置
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""
+" => vim-gitgutter
+""""""""""""""""""""""""""""""
+set shell=/bin/bash
+
+""""""""""""""""""""""""""""""
+" => vim-easymotion
+""""""""""""""""""""""""""""""
+"map  / <Plug>(easymotion-sn)
+"omap / <Plug>(easymotion-tn)
+" These `n` & `N` mappings are options. You do not have to map `n` & `N` to
+" EasyMotion.
+" Without these mappings, `n` & `N` works fine. (These mappings just provide
+" different highlight method and have some other features )
+"map  n <Plug>(easymotion-next)
+"map  N <Plug>(easymotion-prev)
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>h <Plug>(easymotion-linebackward)
+let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
+let g:EasyMotion_smartcase = 1
+
+""""""""""""""""""""""""""""""
+" => Nerd Tree
+""""""""""""""""""""""""""""""
+let g:NERDTreeWinPos = "left"
+let NERDTreeIgnore = ['\.pyc$', '__pycache__$[[dir]]']
+let g:NERDTreeWinSize = 25
+"map <leader>nn :NERDTreeToggle<cr>
+map <leader>nn :NERDTreeTabsToggle<cr>
+map <leader>nb :NERDTreeFromBookmark
+"map <leader>nf :NERDTreeFind<cr>
+map <leader>nf :NERDTreeTabsFind<cr>
+map <F2> <leader>nn
+map <F3> <leader>nf
+" 在终端启动vim时，共享NERDTree
+"let g:nerdtree_tabs_open_on_console_startup=1
+" 显示行号
+let NERDTreeShowLineNumbers=1
+let NERDTreeAutoCenter=1
+let g:nerdtree_tabs_open_on_gui_startup=1
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Unknown"   : "?"
+    \ }
+
+""""""""""""""""""""""""""""""
+" => TagBar
+""""""""""""""""""""""""""""""
+autocmd BufReadPost *.cpp,*.c,*.h,*.py call tagbar#autoopen()
+autocmd BufReadPost *.html,*.js,*.css,.vimrc* call tagbar#CloseWindow()
+nmap <silent> <F4> :TagbarToggle<CR>
+let g:tagbar_sort = 0
+let g:tagbar_width = 29
+let g:tagbar_autofocus = 0
+let g:tagbar_show_linenumbers = 1
+
+""""""""""""""""""""""""""""""
+" => YouCompleteMe
+""""""""""""""""""""""""""""""
+let g:ycm_autoclose_preview_window_after_completion=1
+set completeopt=longest,menu	"让Vim的补全菜单行为与一般IDE一致(参考VimTip1228)
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif	"离开插入模式后自动关闭预览窗口
+inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"	"回车即选中当前项
+"上下左右键的行为 会显示其他信息
+inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
+inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
+inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
+inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
+" 跳转到定义处
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <F6> :YcmForceCompileAndDiagnostics<CR>	"force recomile with syntastic
+" nnoremap <leader>lo :lopen<CR>	"open locationlist
+" nnoremap <leader>lc :lclose<CR>	"close locationlist
+inoremap <leader><leader> <C-x><C-o>
+
+let g:ycm_python_binary_path = '/usr/local/bin/python3'
+"let g:ycm_global_ycm_extra_conf = '~/.vim/data/ycm/.ycm_extra_conf.py'
+" 不显示开启vim时检查ycm_extra_conf文件的信息
+let g:ycm_confirm_extra_conf=1
+" 开启基于tag的补全，可以在这之后添加需要的标签路径
+let g:ycm_collect_identifiers_from_tags_files=1
+"注释和字符串中的文字也会被收入补全
+let g:ycm_collect_identifiers_from_comments_and_strings = 0
+" 输入第2个字符开始补全
+let g:ycm_min_num_of_chars_for_completion=2
+" 禁止缓存匹配项,每次都重新生成匹配项
+let g:ycm_cache_omnifunc=0
+" 开启语义补全
+let g:ycm_seed_identifiers_with_syntax=1
+"在注释输入中也能补全
+let g:ycm_complete_in_comments = 1
+"在字符串输入中也能补全
+let g:ycm_complete_in_strings = 1
+" 设置在下面几种格式的文件上屏蔽ycm
+let g:ycm_filetype_blacklist = {
+      \ 'tagbar' : 1,
+      \ 'nerdtree' : 1,
+      \}
+"youcompleteme  默认tab  s-tab 和 ultisnips 冲突
+let g:ycm_key_list_select_completion = ['<Down>']
+let g:ycm_key_list_previous_completion = ['<Up>']
+" 修改对C函数的补全快捷键，默认是CTRL + space，修改为ALT + ;
+let g:ycm_key_invoke_completion = '<M-;>'
+" YCM 补全菜单配色
+" 菜单
+highlight Pmenu ctermfg=2 ctermbg=3 guifg=#005f87 guibg=#EEE8D5
+" 选中项
+highlight PmenuSel ctermfg=2 ctermbg=3 guifg=#AFD700 guibg=#106900
+" 补全功能在注释中同样有效
+let g:ycm_complete_in_comments=1
+" 允许 vim 加载 .ycm_extra_conf.py 文件，不再提示
+let g:ycm_confirm_extra_conf=0
+" 开启 YCM 标签补全引擎
+let g:ycm_collect_identifiers_from_tags_files=1
+" 补全内容不以分割子窗口形式出现，只显示补全列表
+set completeopt-=preview
+" 从第一个键入字符就开始罗列匹配项
+let g:ycm_min_num_of_chars_for_completion=1
+" 禁止缓存匹配项，每次都重新生成匹配项
+let g:ycm_cache_omnifunc=0
+" 语法关键字补全
+let g:ycm_seed_identifiers_with_syntax=1
+
+""""""""""""""""""""""""""""""
+" => ctrlp.vim
+""""""""""""""""""""""""""""""
+let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_working_path_mode = 'ra'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+"let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+let g:ctrlp_user_command = 'ag %s -g ""'
+
+" use ag, g:ctrlp_custom_ignore is useless.
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](node_modules|target|dist|py_env-default|media|staticfiles|static/img)|(\.(swp|ico|git|svn))$',
+  \ 'file': '\v\.(exe|so|dll)|pyc$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+let g:ctrlp_reuse_window = 'NERD\|help\|quickfix'
+
+""""""""""""""""""""""""""""""
+" => ctrlsf.vim
+""""""""""""""""""""""""""""""
+let g:ctrlsf_position = 'bottom'
+let g:ctrlsf_ackprg = 'ag'
+nmap <c-c> <Plug>CtrlSFPrompt
+
+""""""""""""""""""""""""""""""
+" => vim-flake8
+""""""""""""""""""""""""""""""
+let g:flake8_cmd="/usr/local/bin/flake8"
+autocmd BufWritePost *.py call Flake8()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-airline config (force color)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:airline_theme="luna"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-indent-guides
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 随 vim 自启动
+let g:indent_guides_enable_on_vim_startup=1
+" 从第二层开始可视化显示缩进
+let g:indent_guides_start_level=2
+" 色块宽度
+let g:indent_guides_guide_size=1
+" 快捷键 i 开/关缩进可视化
+:nmap <silent> <Leader>i <Plug>IndentGuidesToggle
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => SirVer/ultisnips
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => markdown preview
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} map <Leader>pv :!/usr/bin/open -a "/Applications/Google Chrome.app" "%:p"<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => syntastic
+" Change Log
+" 2016.04.13 设置默认不启用 Syntastic, 设置 <leader>c 做手动检查
+" 2016.03.30 启用 Python 检测
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"syntastic检查Python会在保存时有很长时间的卡顿, 所以禁用它对Python文件的检查,
+"我们采取其它方案来进行检查
+let g:syntastic_html_checkers = []
+"let g:syntastic_ignore_files=[".*\.py$"]
+let g:syntastic_python_checkers = []
+"let g:syntastic_python_pylint_args=" ${default_args}"
+let g:syntastic_javascript_checkers = ['eslint']
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+let g:syntastic_mode_map = { 'mode': 'active',
+                            \'active_filetypes': ['javascript'],
+                            \'passive_filetypes': ['python'] }
+
+nmap <leader>c :SyntasticCheck<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => python_mode
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:pymode = 1
+let g:pymode_options = 1
+let g:pymode_rope = 0
+
+let g:pymode_lint = 0
+let g:pymode_lint_checkers = ['flake8']
+
+let g:pymode_virtualenv = 1
+
+" Enable breakpoints plugin
+let g:pymode_breakpoint = 1
+let g:pymode_breakpoint_bind = '<leader>b'
+
+" syntax highlighting
+"let g:pymode_syntax = 1
+"let g:pymode_syntax_all = 1
+"let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+"let g:pymode_syntax_space_errors = g:pymode_syntax_all
+
+" Don't autofold code
+let g:pymode_folding = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => wakatime
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:wakatime_PythonBinary = '/usr/local/bin/python2'

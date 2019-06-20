@@ -1,11 +1,21 @@
-[hub]
-  protocol = https
 [user]
-  name = Amo Wu
-  email = amo260@gmail.com
-  signingkey = E77D0CB6
-[credential]
-  helper = osxkeychain
+	name = NSDont
+	email = haodewanan@gmail.com
+[alias]
+  logg = log --left-right --graph --format=\"%C(auto)%d %h%Creset% s %C(68)%ar %C(ul 117)%aN|%cN%Creset\"
+  logga = log --all --left-right --graph --format=\"%C(auto)%d %h%Creset% s %C(68)%ar %C(ul 117)%aN|%cN%Creset\"
+  st = status
+  co = checkout
+  br = branch
+  ci = commit
+  re = reset
+  rb = rebase
+  rbi = rebase -i
+  rbim = rebase -i origin/master
+  rbc = rebase --continue
+  fe = fetch
+  cp = cherry-pick
+  lg = log
 [color]
   diff = auto
   status = auto
@@ -13,38 +23,55 @@
   log = auto
   ui = true
 [core]
-  excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore
   editor = vim
-  ignorecase = false
+  autocrlf = input
+  safecrlf = false
+[init]
+  templatedir = ~/.git-templates
+[mergetool]
+  keepBackup = false
+[difftool]
+  prompt = false
 [help]
   autocorrect = 1
 [push]
-  default = simple
-[diff]
-  tool = sourcetree
-[difftool]
-  prompt = false
-[difftool "sourcetree"]
-  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-  trustExitCode = false
-  path =
+  # See `git help config` (search for push.default)
+  # for more information on different options of the below setting.
+  #
+  # Setting to git 2.0 default to surpress warning message
+  default = current
+[pull]
+    rebae = true
+[rerere]
+    enabled = true
+[rebase]
+    stat = true
+    autoSquash = true
 [merge]
-  tool = sourcetree
-[mergetool]
-  keepBackup = false
+    log = true
+    ff = false
+[i18n]
+    commitencoding = utf-8
+    logoutputencoding = utf-8
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
 [mergetool "sourcetree"]
-  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-  trustExitCode = true
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
 [filter "lfs"]
-  required = true
-  process = git-lfs filter-process
-  clean = git-lfs clean -- %f
-  smudge = git-lfs smudge -- %f
-[commit]
-  gpgsign = true
-[alias]
-  prune = fetch --prune
-  undo = reset --soft HEAD^
-  stash-all = stash save --include-untracked
-  standup = log --pretty=format:'%Cred%h%Creset %s, %Cgreen(%ar), %C(bold blue)%an%Creset' --first-parent --since=1.days upstream/develop
-  cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
+    clean = git-lfs clean %f
+    smudge = git-lfs smudge %f
+    required = true
+;[http]
+;   proxy = socks5://127.0.0.1:1080
+;[https]
+;   proxy = socks5://127.0.0.1:1080
+[status]
+    submoduleSummary = true
+[http]
+	sslVerify = false
+[pager]
+       diff = diff-so-fancy | less --tabs=1,5 -RFX
+       show = diff-so-fancy | less --tabs=1,5 -RFX

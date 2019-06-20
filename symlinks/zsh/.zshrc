@@ -1,12 +1,13 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/amowu/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="spaceship"
-
+ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -49,9 +50,12 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting z zsh-autosuggestions zsh-wakatime docker)
+plugins=(git cp docker extract autojump brew osx zsh-syntax-highlighting autopep8 pip zsh-wakatime)
 
 # User configuration
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -112,3 +116,5 @@ if [ -d "$DOTFILES" ]; then
 
   unset config_files
 fi
+
+source $DOTFILES/zsh/config.zsh
