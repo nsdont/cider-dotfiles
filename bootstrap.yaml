@@ -1,228 +1,275 @@
 after-scripts:
-  - brew linkapps
+- brew linkapps
 before-scripts:
-  - "./scripts/oh-my-zsh/install.sh"
-  - "./scripts/nvm/install.sh"
-  - "./scripts/fzf/install.sh"
-  - "./scripts/zsh-autosuggestions/install.sh"
-  - "./scripts/system/symlink.sh"
+- ./scripts/oh-my-zsh/install.sh
+- ./scripts/nvm/install.sh
+- ./scripts/fzf/install.sh
+- ./scripts/zsh-autosuggestions/install.sh
+- ./scripts/system/symlink.sh
 casks:
-  - alfred
-  - anki
-  - bartender
-  - calibre
-  - docker
-  - font-source-code-pro
-  - font-source-code-pro-for-powerline
-  - iina
-  - istat-menus
-  #- lepton
-  - manico
-  - marginnote
-  - moom
-  - motrix
-  - mweb
-  #- notion
-  - osxfuse # 和 ntfs-3g 搭配使用，能挂载 ntfs
-  - omnifocus
-  - omnigraffle
-  - omniplan
-  - picgo
-  - popclip
-  - qlcolorcode
-  - qlimagesize
-  - qlmarkdown
-  - qlprettypatch
-  - qlstephen
-  - qlvideo
-  - quicklook-csv
-  - quicklook-json
-  - quicklookase
-  #- sogouinput
-  #- vagrant
-  - visual-studio-code
-  - webpquicklook
-  - wechat
-  - wireshark
-  #- wpsoffice
-  - yinxiangbiji
+- 1password
+- adoptopenjdk8
+- alfred
+- anki
+- bartender
+- calibre
+- docker
+- font-hack-nerd-font
+- font-source-code-pro
+- font-source-code-pro-for-powerline
+- iina
+- istat-menus
+- iterm2
+- kap
+- manico
+- marginnote
+- moom
+- motrix
+- mweb
+- neteasemusic
+- omnifocus
+- omnigraffle
+- omniplan
+- openinterminal
+- osxfuse
+- picgo
+- popclip
+- qlcolorcode
+- qlimagesize
+- qlmarkdown
+- qlprettypatch
+- qlstephen
+- qlvideo
+- quicklook-csv
+- quicklook-json
+- quicklookase
+- squirrel
+- visual-studio-code
+- webpquicklook
+- wechat
+- wireshark
+- evernote
+- Firefox
+
 formulas:
-  - ack
-  - adns
-  - aircrack-ng
-  - aom
-  - aria2
-  - asciinema
-  - autoconf
-  - autoconf-archive
-  - autoenv
-  - autojump
-  - automake
-  - bash
-  - bash-completion
-  - bat
-  - cairo
-  - cheat
-  - cmake
-  - coreutils
-  - cscope
-  - ctags
-  - curl
-  - diff-so-fancy
-  - erlang
-  - fd
-  - ffmpeg
-  - findutils
-  - flac
-  - fontconfig
-  - fping
-  - freetype
-  - frei0r
-  - fribidi
-  - gd
-  - gdbm
-  - gettext
-  - giflib
-  - git
-  - git-flow
-  - glib
-  - glibmm
-  - gmp
-  - gnupg
-  - gnutls
-  - go
-  - goaccess
-  - graphite2
-  - graphviz
-  - grc
-  - gts
-  - harfbuzz
-  - highlight
-  - htop
-  - httpie
-  - icu4c
-  - imgcat
-  - irssi
-  - jasper
-  - jemalloc
-  - jenv
-  - jpeg
-  - lame
-  - leptonica
-  - libass
-  - libassuan
-  - libbluray
-  - libevent
-  - libffi
-  - libgcrypt
-  - libgpg-error
-  - libidn2
-  - libksba
-  - libmagic
-  - libmaxminddb
-  - libogg
-  - libpng
-  - libsamplerate
-  - libsigc++
-  - libsndfile
-  - libsoxr
-  - libssh2
-  - libtasn1
-  - libtermkey
-  - libtiff
-  - libtool
-  - libunistring
-  - libusb
-  - libuv
-  - libvorbis
-  - libvpx
-  - libvterm
-  - libxml++
-  - libyaml
-  - libzip
-  - little-cms2
-  - lua
-  - luajit
-  - lzo
-  - m-cli
-  - mackup
-  - mongodb
-  - mosh
-  - msgpack
-  - ncurses
-  - neovim
-  - netpbm
-  - nettle
-  - nginx
-  - nmap
-  - node
-  - npth
-  - ntfs-3g # 和 osxfuse 搭配使用，能挂载 ntfs
-  - nvm
-  - opencc
-  - opencore-amr
-  - openjpeg
-  - openssl
-  - openssl@1.1
-  - opus
-  - p11-kit
-  - pcre
-  - pcre2
-  - perl
-  - pinentry
-  - pipenv
-  - pixman
-  - pkg-config
-  - protobuf
-  - pyenv
-  - python
-  - python@2
-  - readline
-  - redis
-  - rethinkdb
-  - rsync
-  - rtmpdump
-  - rubberband
-  - ruby
-  - sdl2
-  - snappy
-  - speex
-  - sqlite
-  - ssh-copy-id
-  - stormssh
-  - terraform
-  - tesseract
-  - the_silver_searcher
-  - thefuck
-  - theora
-  - tldr
-  - tokyo-cabinet
-  - trash
-  - tree
-  - unbound
-  - unibilium
-  - unrar
-  - vim
-  - webp
-  - wget
-  - wxmac
-  - x264
-  - x265
-  - xvid
-  - xz
-  - yarn
-  - youtube-dl
-  - zsh
-  - zsh-completions
+- ack
+- adns
+- aircrack-ng
+- aom
+- aria2
+- asciinema
+- autoconf
+- autoconf-archive
+- autoenv
+- autojump
+- automake
+- bash
+- bash-completion
+- bat
+- cairo
+- cheat
+- cmake
+- coreutils
+- cscope
+- ctags
+- curl
+- diff-so-fancy
+- erlang
+- fd
+- ffmpeg
+- findutils
+- flac
+- fontconfig
+- fping
+- freetype
+- frei0r
+- fribidi
+- gd
+- gdb
+- gdbm
+- gettext
+- giflib
+- git
+- git-flow
+- glib
+- glibmm
+- gmp
+- gnu-sed
+- gnupg
+- gnutls
+- go
+- goaccess
+- gox
+- graphite2
+- graphviz
+- grc
+- groovy
+- gts
+- harfbuzz
+- highlight
+- htop
+- httpie
+- icu4c
+- ilmbase
+- imagemagick
+- imgcat
+- irssi
+- jasper
+- jemalloc
+- jenv
+- jpeg
+- jq
+- kafkacat
+- lame
+- leptonica
+- libass
+- libassuan
+- libbluray
+- libde265
+- libevent
+- libffi
+- libgcrypt
+- libgpg-error
+- libheif
+- libidn2
+- libksba
+- libmagic
+- libmaxminddb
+- libogg
+- libomp
+- libpng
+- librdkafka
+- libsamplerate
+- libsigc++
+- libsndfile
+- libsodium
+- libsoxr
+- libssh2
+- libtasn1
+- libtermkey
+- libtiff
+- libtool
+- libunistring
+- libusb
+- libuv
+- libvorbis
+- libvpx
+- libvterm
+- libxml++
+- libyaml
+- libzip
+- little-cms2
+- lsd
+- lua
+- luajit
+- lz4
+- lzlib
+- lzo
+- m-cli
+- mackup
+- maven
+- mongodb
+- mongodb-community
+- mosh
+- msgpack
+- mysql
+- ncdu
+- ncurses
+- neofetch
+- neovim
+- netpbm
+- nettle
+- nginx
+- nmap
+- node
+- npth
+- ntfs-3g
+- nvm
+- oniguruma
+- opencc
+- opencore-amr
+- openexr
+- openjpeg
+- openssl
+- openssl@1.1
+- opus
+- p11-kit
+- pandoc
+- pcre
+- pcre2
+- perl
+- pinentry
+- pipenv
+- pixman
+- pkg-config
+- postgresql@10
+- prettyping
+- protobuf
+- pure-ftpd
+- pyenv
+- pyenv-virtualenv
+- pygitup
+- python
+- python@2
+- readline
+- redis
+- rethinkdb
+- rsync
+- rtmpdump
+- rubberband
+- ruby
+- screenresolution
+- sdl2
+- shared-mime-info
+- snappy
+- speex
+- sqlite
+- ssh-copy-id
+- stormssh
+- telnet
+- terraform
+- tesseract
+- the_silver_searcher
+- thefuck
+- theora
+- tldr
+- tokyo-cabinet
+- trash
+- tree
+- unbound
+- unibilium
+- unrar
+- vim
+- webp
+- wget
+- wxmac
+- x264
+- x265
+- xvid
+- xz
+- yajl
+- yarn
+- youtube-dl
+- zplug
+- zsh
+- zsh-completions
+- zstd
 icons: {}
 symlinks:
-  git/.*: "~"
-  mackup/.*: "~"
-  vim/.*: "~"
-  zsh/.*: "~"
+    git/.*: '~'
+    mackup/.*: '~'
+    vim/.*: '~'
+    zsh/.*: '~'
 taps:
-  - caskroom/cask
-  - caskroom/fonts
-  - caskroom/versions
-  - homebrew/bundle
-  - homebrew/versions
+- caskroom/cask
+- caskroom/fonts
+- caskroom/versions
+- eddieantonio/eddieantonio
+- homebrew/bundle
+- homebrew/cask
+- homebrew/cask-fonts
+- homebrew/core
+- homebrew/services
+- homebrew/versions
+- lutzifer/tap
+- mongodb/brew

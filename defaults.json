@@ -4,19 +4,23 @@
     "AppleKeyboardUIMode": 3,
     "ApplePressAndHoldEnabled": false,
     "AppleShowAllExtensions": true,
+    "InitialKeyRepeat": 15,
+    "KeyRepeat": 2,
+    "NSNavPanelExpandedStateForSaveMode": true,
+    "NSNavPanelExpandedStateForSaveMode2": true,
+    "NSWindowResizeTime": 0.001,
     "com.apple.mouse.scaling": 3,
     "com.apple.mouse.tapBehavior": 1,
     "com.apple.springing.delay": 0,
     "com.apple.springing.enabled": true,
     "com.apple.trackpad.scaling": 3,
-    "com.apple.trackpad.threeFingerDragGesture": true,
-    "KeyRepeat": 0,
-    "NSNavPanelExpandedStateForSaveMode": true,
-    "NSNavPanelExpandedStateForSaveMode2": true,
-    "NSWindowResizeTime": 0.001
+    "com.apple.trackpad.threeFingerDragGesture": true
   },
   "com.apple.AppleMultitouchTrackpad": {
     "TrackpadThreeFingerVertSwipeGesture": 0
+  },
+  "com.apple.LaunchServices": {
+    "LSQuarantine": false
   },
   "com.apple.dashboard": {
     "mcx-disabled": true
@@ -35,9 +39,12 @@
     "launchanim": false,
     "mineffect": "scale",
     "minimize-to-application": true,
-    "show-process-indicators": true,
+    "orientation": "left",
+    "show-process-indicators": false,
+    "show-recents": false,
     "showAppExposeGestureEnabled": 1,
-    "showhidden": true
+    "showhidden": true,
+    "tilesize": 72
   },
   "com.apple.driver.AppleBluetoothMultitouch.mouse": {
     "MouseButtonMode": "TwoButton"
@@ -49,19 +56,20 @@
     "TrackpadThreeFingerVertSwipeGesture": 0
   },
   "com.apple.finder": {
-    "_FXShowPosixPathInTitle": true,
+    "FXArrangeGroupViewBy": "Name",
     "FXDefaultSearchScope": "SCcf",
     "FXEnableExtensionChangeWarning": false,
-    "FXPreferredViewStyle": "clmv",
+    "FXPreferredGroupBy": "None",
+    "FXPreferredViewStyle": "Nlsv",
     "NewWindowTarget": "PfLo",
     "NewWindowTargetPath": "file://${HOME}/Downloads/",
     "QLEnableTextSelection": true,
+    "QuitMenuItem": true,
+    "ShowHardDrivesOnDesktop": false,
     "ShowPathbar": true,
     "ShowStatusBar": true,
-    "WarnOnEmptyTrash": false
-  },
-  "com.apple.LaunchServices": {
-    "LSQuarantine": false
+    "WarnOnEmptyTrash": false,
+    "_FXShowPosixPathInTitle": true
   },
   "com.apple.screencapture": {
     "disable-shadow": true
