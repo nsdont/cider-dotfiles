@@ -1,6 +1,5 @@
-if [ ! -d ~/.fzf ]
+if [ ! -d $(brew --prefix)/opt/fzf ]
 then
-    info 'installing fzf'
-    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-    ~/.fzf/install --all
+    info 'fzf install useful key bindings and fuzzy completion '
+    $(brew --prefix)/opt/fzf/install
 fi

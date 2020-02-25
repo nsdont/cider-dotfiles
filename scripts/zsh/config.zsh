@@ -30,6 +30,15 @@ alias ufab="fab -f ~/Documents/source/Abstack/fabfile/fabfile"
 alias http_track="export http_proxy=http://127.0.0.1:9396"
 alias rm='trash'
 
+#pip
+
+alias pip_upgrade="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
+
+# git
+alias gg="git fetch upstream ; git merge upstream/\`git rev-parse --abbrev-ref HEAD\`"
+alias ggg="git co develop; gg;"
+alias g_release="curday=`date +%Y%m%d`; git commit -m \"Added $curday release note.\" && git flow release finish $curday"
+
 # docker
 alias dj='docker-compose run --rm server'
 alias djs='docker-compose run --rm --service-ports server'
@@ -41,15 +50,24 @@ alias upip='PIP_CONFIG_FILE=~/source/uyun/pip.conf pip'
 alias upip2='PIP_CONFIG_FILE=~/source/uyun/pip.conf pip2'
 alias upip3='PIP_CONFIG_FILE=~/source/uyun/pip.conf pip3'
 
+# aria2
+alias start_aria2="aria2c --conf-path="$HOME/.config/aria2.conf" --all-proxy=$http_proxy  -D"
+
 # cli-improved https://remysharp.com/2018/08/23/cli-improved
 alias cat='bat'
 alias ping='prettyping --nolegend'
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 alias help='tldr'
+alias ls='lsd'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
 
 # cheat
-export DEFAULT_CHEAT_DIR="$HOME/.config/cheat"
-export CHEATCOLORS=true
+export CHEAT_USER_DIR="$HOME/.config/cheat"
+export CHEAT_COLORS=true
+export CHEAT_PATH="/usr/local/share/cheat"
+export CHEAT_COLORSCHEME=dark
 
 # where proxy
 proxy () {
@@ -69,16 +87,11 @@ noproxy () {
 # auto start vpn
 proxy
 
-# fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# Setting ag as the default source for fzf
-# Respecting .gitignore, .hgignore, and svn:ignore
-export FZF_DEFAULT_COMMAND='ag -g ""'
-# To apply the command to CTRL-T as well
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
 # .env
 [ -f .env ] && source .env
+
+# Setup zsh-autosuggestions
+source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # disable tar create ._foo file
 # https://superuser.com/questions/61185/why-do-i-get-files-like-foo-in-my-tarball-on-os-x
@@ -92,3 +105,12 @@ export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
 # homebrew
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
+
+# the fuck
+eval "$(thefuck --alias)"
+
+# CMAKE
+export CMAKE_PREFIX_PATH=/usr/local/Cellar/qt5/5.5.1_2/lib/cmake:$CMAKE_PREFIX_PATH
+
+# c build flag
+export "CFLAGS=-I/usr/local/include -L/usr/local/lib"

@@ -1,10 +1,12 @@
 after-scripts:
 - brew linkapps
+- ./scripts/fzf/install.sh
+- ./scripts/zsh-autosuggestions/install.sh
+- ./scripts/pyenv/install.sh
+- ./scripts/pipx/install.sh
 before-scripts:
 - ./scripts/oh-my-zsh/install.sh
 - ./scripts/nvm/install.sh
-- ./scripts/fzf/install.sh
-- ./scripts/zsh-autosuggestions/install.sh
 - ./scripts/system/symlink.sh
 casks:
 - 1password
@@ -199,7 +201,6 @@ formulas:
 - pcre2
 - perl
 - pinentry
-- pipenv
 - pixman
 - pkg-config
 - postgresql@10
@@ -254,6 +255,7 @@ formulas:
 - zsh
 - zsh-completions
 - zstd
+- fzf
 icons: {}
 symlinks:
     git/.*: '~'
