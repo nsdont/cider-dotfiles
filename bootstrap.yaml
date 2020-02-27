@@ -1,5 +1,4 @@
 after-scripts:
-- brew linkapps
 - ./scripts/fzf/install.sh
 - ./scripts/zsh-autosuggestions/install.sh
 - ./scripts/pyenv/install.sh
@@ -7,6 +6,7 @@ after-scripts:
 before-scripts:
 - ./scripts/oh-my-zsh/install.sh
 - ./scripts/nvm/install.sh
+- ./scripts/powerlevel10k/install.sh
 - ./scripts/system/symlink.sh
 casks:
 - 1password
@@ -170,7 +170,6 @@ formulas:
 - m-cli
 - mackup
 - maven
-- mongodb
 - mongodb-community
 - mosh
 - msgpack
@@ -263,15 +262,11 @@ symlinks:
     vim/.*: '~'
     zsh/.*: '~'
 taps:
-- caskroom/cask
-- caskroom/fonts
-- caskroom/versions
 - eddieantonio/eddieantonio
 - homebrew/bundle
 - homebrew/cask
 - homebrew/cask-fonts
 - homebrew/core
 - homebrew/services
-- homebrew/versions
 - lutzifer/tap
 - mongodb/brew
