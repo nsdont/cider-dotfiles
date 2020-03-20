@@ -29,6 +29,7 @@ alias gfb='git fetch && git rebase -i origin/develop'
 alias ufab="fab -f ~/Documents/source/Abstack/fabfile/fabfile"
 alias http_track="export http_proxy=http://127.0.0.1:9396"
 alias rm='trash'
+alias c='cd ~/Downloads/`date +"%Y%m%d"`'
 
 #pip
 
@@ -36,8 +37,7 @@ alias pip_upgrade="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs 
 
 # git
 alias gg="git fetch upstream ; git merge upstream/\`git rev-parse --abbrev-ref HEAD\`"
-alias ggg="git co develop; gg;"
-alias g_release="curday=`date +%Y%m%d`; git commit -m \"Added $curday release note.\" && git flow release finish $curday"
+alias ggg="git co develop; gg;" alias g_release="curday=`date +%Y%m%d`; git commit -m \"Added $curday release note.\" && git flow release finish $curday"
 
 # docker
 alias dj='docker-compose run --rm server'
@@ -114,3 +114,6 @@ export CMAKE_PREFIX_PATH=/usr/local/Cellar/qt5/5.5.1_2/lib/cmake:$CMAKE_PREFIX_P
 
 # c build flag
 export "CFLAGS=-I/usr/local/include -L/usr/local/lib"
+
+# DOTENV
+export ZSH_DOTENV_PROMPT=false
