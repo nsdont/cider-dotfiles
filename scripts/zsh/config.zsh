@@ -24,6 +24,7 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
 --cache=$HOME/.npm/.cache/cnpm \
 --disturl=https://npm.taobao.org/dist \
 --userconfig=$HOME/.cnpmrc"
+alias cyarn="yarn --registry https://registry.npm.taobao.org/"
 alias cppcompile='c++ -std=c++11 -stdlib=libc++'
 alias gfb='git fetch && git rebase -i origin/develop'
 alias ufab="fab -f ~/Documents/source/Abstack/fabfile/fabfile"
@@ -117,3 +118,9 @@ export "CFLAGS=-I/usr/local/include -L/usr/local/lib"
 
 # DOTENV
 export ZSH_DOTENV_PROMPT=false
+
+# load argcomplete
+autoload bashcompinit
+bashcompinit
+
+eval "$(register-python-argcomplete pipx)"
