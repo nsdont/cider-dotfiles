@@ -69,3 +69,6 @@ _开发资料/
 fabfile.py
 .env
 .python-version
+.pytest_cache
+
+.factorypath

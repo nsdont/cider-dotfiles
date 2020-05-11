@@ -23,7 +23,7 @@
   log = auto
   ui = true
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/zhongjw/.gitignore
   editor = vim
   autocrlf = input
   safecrlf = false
@@ -56,9 +56,9 @@
     logoutputencoding = utf-8
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /private/var/folders/0g/bz9dl6mx1fq2flqhg42ws0bh0000gn/T/AppTranslocation/339A99CD-1E55-4D62-B1E5-59B14C056E99/d/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [filter "lfs"]
     clean = git-lfs clean %f
@@ -75,3 +75,5 @@
 [pager]
        diff = diff-so-fancy | less --tabs=1,5 -RFX
        show = diff-so-fancy | less --tabs=1,5 -RFX
+[commit]
+	template = /Users/zhongjw/.stCommitMsg

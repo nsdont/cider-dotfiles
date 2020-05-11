@@ -65,10 +65,7 @@ alias lla='ls -la'
 alias lt='ls --tree'
 
 # cheat
-export CHEAT_USER_DIR="$HOME/.config/cheat"
-export CHEAT_COLORS=true
-export CHEAT_PATH="/usr/local/share/cheat"
-export CHEAT_COLORSCHEME=dark
+export CHEAT_CONFIG_PATH="$HOME/.config/cheat/conf.yml"
 
 # where proxy
 proxy () {
@@ -123,4 +120,4 @@ export ZSH_DOTENV_PROMPT=false
 autoload bashcompinit
 bashcompinit
 
-eval "$(register-python-argcomplete pipx)"
+# eval "$(~/.pyenv/versions/3.8.1/bin/register-python-argcomplete pipx)"
