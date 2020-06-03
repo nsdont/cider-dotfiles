@@ -5,9 +5,10 @@ autoload -U $DOTFILES/functions/*(:t)
 # Customize alias
 alias vi="vim"
 
-alias -s gz='tar -xzvf'
-alias -s tgz='tar -xzvf'
-alias -s bz2='tar -xjvf'
+alias tar="tar --exclude '.DS_Store'"
+alias gz='tar -xzvf'
+alias tgz='tar -xzvf'
+alias bz2='tar -xjvf'
 
 #alias fab='fab -f ~/fabfile.py'
 alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
@@ -119,5 +120,8 @@ export ZSH_DOTENV_PROMPT=false
 # load argcomplete
 autoload bashcompinit
 bashcompinit
+
+# JAVA_HOME
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/"
 
 # eval "$(~/.pyenv/versions/3.8.1/bin/register-python-argcomplete pipx)"
