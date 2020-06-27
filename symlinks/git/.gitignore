@@ -72,3 +72,6 @@ fabfile.py
 .pytest_cache
 
 .factorypath
+
+# java
+target
