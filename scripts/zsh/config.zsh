@@ -1,4 +1,5 @@
 fpath=($DOTFILES/functions $fpath)
+fpath=(~/.config/zsh.d $fpath)
 
 autoload -U $DOTFILES/functions/*(:t)
 
