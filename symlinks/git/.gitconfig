@@ -23,6 +23,7 @@
   log = auto
   ui = true
 [core]
+    gitproxy = /Users/zhongjs/bin/proxy-wrapper
 	excludesfile = /Users/zhongjw/.gitignore
   editor = vim
   autocrlf = input

@@ -32,7 +32,8 @@ alias gfb='git fetch && git rebase -i origin/develop'
 alias ufab="fab -f ~/Documents/source/Abstack/fabfile/fabfile"
 alias http_track="export http_proxy=http://127.0.0.1:9396"
 alias rm='trash'
-alias c='cd ~/Downloads/`date +"%Y%m%d"`'
+#alias c='cd ~/Downloads/`date +"%Y%m%d"`'
+alias c='cd ~/Downloads/'
 
 #pip
 
