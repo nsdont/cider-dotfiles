@@ -75,3 +75,7 @@ fabfile.py
 
 # java
 target
+logging.path_IS_UNDEFINED
+
+# JRebel
+rebel.xml

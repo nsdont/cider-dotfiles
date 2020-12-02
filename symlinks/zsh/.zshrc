@@ -54,7 +54,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git cp docker extract autojump brew osx autopep8 pip zsh-wakatime dotenv)
+plugins=(git cp docker extract autojump brew osx autopep8 pip dotenv)
 
 # User configuration
 

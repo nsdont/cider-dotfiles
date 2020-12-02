@@ -3,6 +3,10 @@ fpath=(~/.config/zsh.d $fpath)
 
 autoload -U $DOTFILES/functions/*(:t)
 
+#setopt append_history
+#setopt inc_append_history
+#setopt share_history
+
 # Customize alias
 alias vi="vim"
 
@@ -13,8 +17,7 @@ alias bz2='tar -xjvf'
 
 #alias fab='fab -f ~/fabfile.py'
 alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
-alias grep="grep --color=auto"
-alias mocha='mocha -R spec'
+alias grep="grep --color=auto" alias mocha='mocha -R spec'
 alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias pgstop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 alias git_set_proxy="git config --global http.proxy http://127.0.0.1:8118; git config --global https.proxy http://127.0.0.1:8118"
@@ -53,6 +56,7 @@ alias djh='docker-compose run --rm server coverage html'
 alias upip='PIP_CONFIG_FILE=~/source/uyun/pip.conf pip'
 alias upip2='PIP_CONFIG_FILE=~/source/uyun/pip.conf pip2'
 alias upip3='PIP_CONFIG_FILE=~/source/uyun/pip.conf pip3'
+alias umvn='mvn -s ~/source/uyun/settings-uyun.xml'
 
 # aria2
 alias start_aria2="aria2c --conf-path="$HOME/.config/aria2.conf" --all-proxy=$http_proxy  -D"
@@ -62,19 +66,23 @@ alias cat='bat'
 alias ping='prettyping --nolegend'
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 alias help='tldr'
-alias ls='lsd'
+alias ls='exa'
 alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
+
+# plugins
+# zstyle :omz:plugins:ssh-agent agent-forwarding on
+zstyle :omz:plugins:ssh-agent identities id_rsa uyun/id_rsa
 
 # cheat
 export CHEAT_CONFIG_PATH="$HOME/.config/cheat/conf.yml"
 
 # where proxy
 proxy () {
-  export http_proxy="http://127.0.0.1:8118"
-  export https_proxy="http://127.0.0.1:8118"
-  export all_proxy="http://127.0.0.1:8118"
+  export https_proxy=http://127.0.0.1:7893 
+  export http_proxy=http://127.0.0.1:7893 
+  export all_proxy=socks5://127.0.0.1:7893
   #echo "HTTP Proxy on"
 }
 
@@ -124,6 +132,7 @@ autoload bashcompinit
 bashcompinit
 
 # JAVA_HOME
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/"
+#export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-8.jdk/Contents/Home/"
 
 # eval "$(~/.pyenv/versions/3.8.1/bin/register-python-argcomplete pipx)"
