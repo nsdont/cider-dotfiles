@@ -14,7 +14,9 @@ casks:
 - alfred
 - anki
 - bartender
+- bob
 - calibre
+- chromedriver
 - docker
 - font-hack-nerd-font
 - font-source-code-pro
@@ -25,6 +27,7 @@ casks:
 - kap
 - manico
 - marginnote
+- microsoft-edge
 - moom
 - motrix
 - mweb
@@ -50,9 +53,6 @@ casks:
 - webpquicklook
 - wechat
 - wireshark
-- evernote
-- Firefox
-
 formulas:
 - ack
 - adns
@@ -69,6 +69,7 @@ formulas:
 - bash-completion
 - bat
 - cairo
+- cheat
 - cmake
 - coreutils
 - cscope
@@ -76,6 +77,7 @@ formulas:
 - curl
 - diff-so-fancy
 - erlang
+- exa
 - fd
 - ffmpeg
 - findutils
@@ -85,13 +87,15 @@ formulas:
 - freetype
 - frei0r
 - fribidi
+- fswatch
+- fzf
 - gd
 - gdb
 - gdbm
 - gettext
 - giflib
 - git
-- git-flow
+- git-flow-avh
 - glib
 - glibmm
 - gmp
@@ -101,6 +105,7 @@ formulas:
 - go
 - goaccess
 - gox
+- gradle
 - graphite2
 - graphviz
 - grc
@@ -120,6 +125,7 @@ formulas:
 - jenv
 - jpeg
 - jq
+- jshon
 - kafkacat
 - lame
 - leptonica
@@ -145,6 +151,7 @@ formulas:
 - libsndfile
 - libsodium
 - libsoxr
+- libssh
 - libssh2
 - libtasn1
 - libtermkey
@@ -173,6 +180,9 @@ formulas:
 - mosh
 - msgpack
 - mysql
+- mysql-client
+- mysql-connector-c
+- mysql@5.7
 - ncdu
 - ncurses
 - neofetch
@@ -201,8 +211,9 @@ formulas:
 - pinentry
 - pixman
 - pkg-config
-- postgresql@10
+- pngpaste
 - prettyping
+- progress
 - protobuf
 - pure-ftpd
 - pyenv
@@ -210,9 +221,12 @@ formulas:
 - pygitup
 - python
 - python@2
+- rclone
 - readline
 - redis
+- rename
 - rethinkdb
+- rmtrash
 - rsync
 - rtmpdump
 - rubberband
@@ -251,20 +265,21 @@ formulas:
 - zplug
 - zsh
 - zsh-completions
+- zsh-syntax-highlighting
 - zstd
-- fzf
 icons: {}
 symlinks:
     git/.*: '~'
     mackup/.*: '~'
+    p10k/.*: '~'
     vim/.*: '~'
     zsh/.*: '~'
-    p10k/.*: '~'
 taps:
 - eddieantonio/eddieantonio
 - homebrew/bundle
 - homebrew/cask
 - homebrew/cask-fonts
+- homebrew/cask-versions
 - homebrew/core
 - homebrew/services
 - lutzifer/tap
