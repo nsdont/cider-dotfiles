@@ -237,6 +237,7 @@ formulas:
 - sqlite
 - ssh-copy-id
 - stormssh
+- svn
 - telnet
 - terraform
 - tesseract
