@@ -219,7 +219,6 @@ formulas:
 - pyenv-virtualenv
 - pygitup
 - python
-- python@2
 - rclone
 - readline
 - redis
