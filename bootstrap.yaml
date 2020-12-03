@@ -30,7 +30,8 @@ casks:
 - motrix
 - neteasemusic
 - omnifocus
-- osxfuse
+- openineditor-lite
+- openinterminal-lite
 - picgo
 - popclip
 - qlcolorcode
@@ -43,15 +44,19 @@ casks:
 - quicklook-json
 - quicklookase
 - squirrel
+- telegram
 - visual-studio-code
 - webpquicklook
 - wechat
 - wireshark
+- yinxiangbiji
 formulas:
 - ack
 - adns
 - aircrack-ng
 - aom
+- apr
+- apr-util
 - aria2
 - asciinema
 - autoconf
@@ -230,6 +235,7 @@ formulas:
 - sqlite
 - ssh-copy-id
 - stormssh
+- subversion
 - svn
 - telnet
 - terraform
