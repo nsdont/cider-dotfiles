@@ -29,6 +29,7 @@ $ git clone https://github.com/nsdont/cider-dotfiles.git ~/.cider
 ## Restore dotfiles
 
 ```
+$ export HOMEBREW_NO_AUTO_UPDATE=1
 $ cider restore
 ```
 
