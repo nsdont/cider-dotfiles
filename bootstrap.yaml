@@ -10,7 +10,6 @@ before-scripts:
 - ./scripts/system/symlink.sh
 casks:
 - 1password
-- adoptopenjdk8
 - alfred
 - anki
 - bartender
@@ -24,18 +23,13 @@ casks:
 - iina
 - istat-menus
 - iterm2
-- kap
 - manico
 - marginnote
 - microsoft-edge
 - moom
 - motrix
-- mweb
 - neteasemusic
 - omnifocus
-- omnigraffle
-- omniplan
-- openinterminal
 - osxfuse
 - picgo
 - popclip

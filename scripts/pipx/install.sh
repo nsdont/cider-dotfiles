@@ -1,6 +1,6 @@
 pyenv global 3.8.1
 
-pip install pipx
+pip3 install pipx
 pipx install flake8
 pipx install glances
 pipx install ipython
