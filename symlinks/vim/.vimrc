@@ -219,7 +219,7 @@ map <F3> <leader>nf
 let NERDTreeShowLineNumbers=1
 let NERDTreeAutoCenter=1
 let g:nerdtree_tabs_open_on_gui_startup=1
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
     \ "Untracked" : "✭",
