@@ -7,4 +7,3 @@ pipx install ipython
 pipx install yapf
 pipx install you-get
 pipx install youtube-dl
-pipx install cheat
