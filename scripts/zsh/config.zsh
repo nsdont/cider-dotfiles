@@ -78,14 +78,6 @@ zstyle :omz:plugins:ssh-agent identities id_rsa uyun/id_rsa
 # cheat
 export CHEAT_CONFIG_PATH="$HOME/.config/cheat/conf.yml"
 
-# where proxy
-proxy () {
-  export https_proxy=http://127.0.0.1:7893 
-  export http_proxy=http://127.0.0.1:7893 
-  export all_proxy=socks5://127.0.0.1:7893
-  #echo "HTTP Proxy on"
-}
-
 # where noproxy
 noproxy () {
   unset http_proxy
@@ -93,8 +85,6 @@ noproxy () {
   unset all_proxy
   echo "HTTP Proxy off"
 }
-# auto start vpn
-proxy
 
 # .env
 [ -f .env ] && source .env
