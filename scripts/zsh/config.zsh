@@ -89,9 +89,6 @@ noproxy () {
 # .env
 [ -f .env ] && source .env
 
-# Setup zsh-autosuggestions
-source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-
 # disable tar create ._foo file
 # https://superuser.com/questions/61185/why-do-i-get-files-like-foo-in-my-tarball-on-os-x
 export COPYFILE_DISABLE=1

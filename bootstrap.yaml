@@ -1,13 +1,12 @@
 after-scripts:
 - ./scripts/fzf/install.sh
-- ./scripts/zsh-autosuggestions/install.sh
 - ./scripts/pyenv/install.sh
 - ./scripts/pipx/install.sh
 - ./scripts/nvm/install.sh
 before-scripts:
+- ./scripts/zplug/install.sh
 - ./scripts/oh-my-zsh/install.sh
 - ./scripts/powerlevel10k/install.sh
-- ./scripts/zsh-osx-autoproxy/install.sh
 - ./scripts/system/symlink.sh
 casks:
 - 1password
@@ -265,7 +264,6 @@ formulas:
 - zplug
 - zsh
 - zsh-completions
-- zsh-syntax-highlighting
 - zstd
 icons: {}
 symlinks:
