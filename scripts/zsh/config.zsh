@@ -100,7 +100,8 @@ export MAGICK_HOME=/usr/local/opt/imagemagick@6
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
 # homebrew
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
+# temporary disable, beacuse download 404
+#export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
 
 # the fuck
 eval "$(thefuck --alias)"

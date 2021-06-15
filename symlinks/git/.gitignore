@@ -81,3 +81,4 @@ logging.path_IS_UNDEFINED
 rebel.xml
 
 local_scripts
+application-local-dev.yml
