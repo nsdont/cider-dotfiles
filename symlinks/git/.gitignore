@@ -79,6 +79,7 @@ logging.path_IS_UNDEFINED
 
 # JRebel
 rebel.xml
+.rebel.xml.bak
 
 local_scripts
 application-local-dev.yml
